@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
 	<parent>
 		<artifactId>hello</artifactId>
 		<groupId>me.giorgirokhadze.hello</groupId>
@@ -11,5 +12,71 @@
 
 	<artifactId>jmx</artifactId>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jetbrains.kotlin</groupId>
+				<artifactId>kotlin-maven-plugin</artifactId>
+				<version>${kotlin.version}</version>
+				<executions>
+					<execution>
+						<id>compile</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<sourceDirs>
+								<source>src/main/java</source>
+							</sourceDirs>
+						</configuration>
+					</execution>
+					<execution>
+						<id>test-compile</id>
+						<phase>process-test-sources</phase>
+						<goals>
+							<goal>test-compile</goal>
+						</goals>
+						<configuration>
+							<sourceDirs>
+								<source>src/test/java</source>
+							</sourceDirs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!--Jetty dependencies start here -->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>9.2.11.v20150529</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>9.2.11.v20150529</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jmx</artifactId>
+			<version>9.2.11.v20150529</version>
+		</dependency>
+		<!--Jetty dependencies end here -->
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-stdlib</artifactId>
+			<version>${kotlin.version}</version>
+		</dependency>
+	</dependencies>
+
+	<properties>
+		<kotlin.version>1.0.1</kotlin.version>
+	</properties>
 
 </project>
