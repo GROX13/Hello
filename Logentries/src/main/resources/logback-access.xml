@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="stash" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/home/giorgi/IdeaProjects/Hello/Logentries/src/main/resources/file.log</file>
+		<encoder class="net.logstash.logback.encoder.LogstashAccessEncoder" />
+	</appender>
+
+	<appender-ref ref="stash" />
+</configuration>

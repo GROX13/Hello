@@ -1,0 +1,2 @@
+{"@timestamp":"2016-03-22T12:05:59.860+04:00","@version":1,"message":"Good","logger_name":"logentries","thread_name":"main","level":"INFO","level_value":20000,"HOSTNAME":"grokh"}
+{"@timestamp":"2016-03-22T12:13:21.920+04:00","@version":1,"message":"log message name1=value1 name2=value2","logger_name":"logentries","thread_name":"main","level":"INFO","level_value":20000,"HOSTNAME":"grokh"}

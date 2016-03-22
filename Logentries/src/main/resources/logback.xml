@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-
 	<appender name="LE"
 			  class="com.logentries.logback.LogentriesAppender">
 		<Debug>False</Debug>
@@ -8,12 +7,26 @@
 		<Ssl>False</Ssl>
 		<facility>USER</facility>
 		<layout>
-			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+			<pattern>%msg</pattern>
 		</layout>
-		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
 	</appender>
 
 	<root level="debug">
 		<appender-ref ref="LE" />
 	</root>
+	<!--appender name="stash" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>info</level>
+		</filter>
+		<Token>96c67c59-52f8-4248-915c-524d480de1bf</Token>
+		<file>/home/giorgi/IdeaProjects/Hello/Logentries/src/main/resources/file.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/home/giorgi/IdeaProjects/Hello/Logentries/src/main/resources/file.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+	</appender>
+	<root level="all">
+		<appender-ref ref="stash" />
+	</root-->
 </configuration>
