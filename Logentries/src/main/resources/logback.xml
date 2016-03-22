@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+	<appender name="LE"
+			  class="com.logentries.logback.LogentriesAppender">
+		<Debug>False</Debug>
+		<Token>96c67c59-52f8-4248-915c-524d480de1bf</Token>
+		<Ssl>False</Ssl>
+		<facility>USER</facility>
+		<layout>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</layout>
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+	</appender>
+
+	<root level="debug">
+		<appender-ref ref="LE" />
+	</root>
+</configuration>
