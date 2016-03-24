@@ -1,3 +1,4 @@
+import org.json.simple.JSONObject
 import org.slf4j.LoggerFactory
 
 object HelloSLF4J {
@@ -5,11 +6,14 @@ object HelloSLF4J {
     private val log = LoggerFactory.getLogger("logentries")
 
     @JvmStatic fun main(args: Array<String>) {
-
+        
+        var obj = JSONObject()
+        var curr = JSONObject()
+        var next = JSONObject()
+        
         val validJson =
                 """ 
                 {
-                  "version": "2",
                   "volume": "blaring",
                   "current": {
                                "band": "rednex",
@@ -22,8 +26,8 @@ object HelloSLF4J {
                                ]
                               }, 
                   "next": {
-                           "band": "the dubliners",
-                           "song": "finnegan's wake",
+                           "band":"the dubliners",
+                           "song":"finnegan's wake",
                            "members":[ 
                                      {"firstname":"Ronnie","lastname":"Drew"}, 
                                      {"firstname":"Luke","lastname":"Kelly"}, 
@@ -33,8 +37,20 @@ object HelloSLF4J {
                           }
                 }
                 """
-
-        log.info(validJson)
+        
+        
+        
+        obj.put("volume", "blaring")
+        
+        curr.put("band", "rednex")
+        curr.put("song", "cotton eye joe")
+        
+        next.put("band","the dubliners")
+        next.put("song","finnegan's wake")
+        
+        obj.put("current", curr)
+        obj.put("next", next)
+        log.info(obj.toJSONString())
 
         System.`in`.read()
     }
