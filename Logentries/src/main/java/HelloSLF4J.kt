@@ -30,7 +30,7 @@ object HelloSLF4J {
                                      {"firstname":"Ciaran","lastname":"Bourke"}, 
                                      {"firstname":"Barney","lastname":"McKenna"}
                            ]
-                        }
+                          }
                 }
                 """
 
