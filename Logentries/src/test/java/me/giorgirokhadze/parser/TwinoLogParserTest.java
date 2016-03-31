@@ -51,22 +51,26 @@ public class TwinoLogParserTest {
 
 		JSONObject jsonLog = new JSONObject();
 		JSONObject temp;
+		jsonLog.put("dateTime", "2016-03-24 15:26:14.478");
 		jsonLog.put("level", "INFO");
 		jsonLog.put("pId", "6543");
 		jsonLog.put("thread", "http-nio-8080-exec-15");
 		jsonLog.put("cid", "435538");
 		jsonLog.put("class", "org.occ.common.service.CommandServiceBean");
+		jsonLog.put("direction", "<--");
+		jsonLog.put("time", "9ms");
 		
 		temp = new JSONObject();
 		temp.put("id", "1209588");
+		temp.put("referer", null);
 		temp.put("clientId", "435538");
-		temp.put("clientFullName", "მარიამ მამადაშვილი");
+		temp.put("clientFullName", "მარიამმამადაშვილი");
 		temp.put("clientMobilePhone", "577320478");
 		temp.put("term", "30 DAYS");
-		temp.put("amount", 1000);
+		temp.put("amount", "1000");
 		temp.put("applicationType", "WEB");
 		temp.put("status", "OPEN");
-		temp.put("confirmed", false);
+		temp.put("confirmed", "false");
 		temp.put("confirmationDate", null);
 		temp.put("resolution", null);
 		temp.put("rejectReason", null);
@@ -77,13 +81,13 @@ public class TwinoLogParserTest {
 		temp.put("closeDate", null);
 		temp.put("creditgSuccessScore", null);
 		temp.put("creditgUsedProviders", null);
-		temp.put("loansCount", 2);
+		temp.put("loansCount", "2");
 		temp.put("creditScore", null);
 		temp.put("testScorecardCreditScore", null);
-		temp.put("askedAmount", 1000);
+		temp.put("askedAmount", "1000");
 		temp.put("askedTerm", "30 DAYS");
 		temp.put("calculatedCreditLimit", null);
-		temp.put("additionalAmountApplication", false);
+		temp.put("additionalAmountApplication", "false");
 		temp.put("flowState", "NEW");
 		temp.put("flowStateDetails", null);
 		temp.put("flowStateStartDateTime", "2016-03-24T15:26:18.618");
