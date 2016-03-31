@@ -66,7 +66,7 @@ public class TwinoLogParserTest {
 		temp.put("clientId", "435538");
 		temp.put("clientFullName", "მარიამმამადაშვილი");
 		temp.put("clientMobilePhone", "577320478");
-		temp.put("term", "30 DAYS");
+		temp.put("term", "30DAYS");
 		temp.put("amount", "1000");
 		temp.put("applicationType", "WEB");
 		temp.put("status", "OPEN");
@@ -85,7 +85,7 @@ public class TwinoLogParserTest {
 		temp.put("creditScore", null);
 		temp.put("testScorecardCreditScore", null);
 		temp.put("askedAmount", "1000");
-		temp.put("askedTerm", "30 DAYS");
+		temp.put("askedTerm", "30DAYS");
 		temp.put("calculatedCreditLimit", null);
 		temp.put("additionalAmountApplication", "false");
 		temp.put("flowState", "NEW");
