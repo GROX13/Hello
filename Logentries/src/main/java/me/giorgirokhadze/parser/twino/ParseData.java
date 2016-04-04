@@ -25,7 +25,7 @@ class ParseData implements Parser {
 			log = String.join("", logLine);			
 			this.parse.put(log.substring(0, log.indexOf("[")), new NestedObjectParser().parse(log.substring(log.indexOf("["))));
 		} else {
-			this.parse.put("todo",new MessageObjectParser().parse(""));
+			this.parse.put("data",new MessageObjectParser().parse(log));
 		}
 		return this.parse;
 	}

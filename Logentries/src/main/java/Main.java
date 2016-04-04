@@ -1,9 +1,11 @@
 import me.giorgirokhadze.parser.twino.TwinoLogParser;
-import net.logstash.logback.encoder.org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
 
@@ -14,16 +16,12 @@ public class Main {
 			String line;
 			int index = 0;
 			while ((line = br.readLine()) != null) {
-				if (StringUtils.countMatches(line, "[") > 1 && line.contains("Event ")) {
-					// process the line.
-
-					logger.info(line);
-					logger.info(TwinoLogParser.instance().parse(line).toJSONString());
-					if (index == 10) {
-						break;
-					}
-					index++;
+				logger.info(line);
+				logger.info(TwinoLogParser.instance().parse(line).toJSONString());
+				if (index == 10) {
+					break;
 				}
+				index++;
 			}
 
 			//noinspection ResultOfMethodCallIgnored
