@@ -16,6 +16,8 @@ public class Main {
 			String line;
 			int index = 0;
 			while ((line = br.readLine()) != null) {
+				line = line.substring(0, line.length() - 1);
+//				line = line.replaceAll("[\u0000-\u001f]", "");
 				logger.info(line);
 				logger.info(TwinoLogParser.instance().parse(line).toJSONString());
 				if (index == 10) {
