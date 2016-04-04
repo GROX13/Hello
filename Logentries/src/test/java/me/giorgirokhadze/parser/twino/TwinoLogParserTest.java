@@ -1,11 +1,11 @@
-package me.giorgirokhadze.parser;
+package me.giorgirokhadze.parser.twino;
 
-import me.giorgirokhadze.parser.twino.TwinoLogParser;
+import me.giorgirokhadze.parser.Parser;
 import org.json.simple.JSONObject;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class TwinoLogParserTest {
 

@@ -16,8 +16,8 @@ public class TwinoLogParser implements Parser {
 		this.headerParser = new ParseHeader();
 	}
 
-	public JSONObject parse(String log) {
-		return new ParseData(headerParser.parse(getHeader(log))).parse(getData(log));
+	public JSONObject parse(String line) {
+		return new ParseData(headerParser.parse(getHeader(line))).parse(getData(line));
 	}
 
 	private String getHeader(String log) {
