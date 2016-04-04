@@ -26,7 +26,7 @@ public class TwinoLogParserTest {
 		JSONObject jsonLog = new JSONObject();
 		jsonLog.put("dateTime", "2016-03-24 15:26:13.454");
 		jsonLog.put("level", "INFO");
-		jsonLog.put("pId", "6543");
+		jsonLog.put("pid", "6543");
 		jsonLog.put("thread", "http-nio-8080-exec-42");
 		jsonLog.put("class", "org.occ.common.service.CommandServiceBean");
 		jsonLog.put("direction", "<--");
@@ -53,7 +53,7 @@ public class TwinoLogParserTest {
 		JSONObject temp;
 		jsonLog.put("dateTime", "2016-03-24 15:26:14.478");
 		jsonLog.put("level", "INFO");
-		jsonLog.put("pId", "6543");
+		jsonLog.put("pid", "6543");
 		jsonLog.put("thread", "http-nio-8080-exec-15");
 		jsonLog.put("cid", "435538");
 		jsonLog.put("class", "org.occ.common.service.CommandServiceBean");
