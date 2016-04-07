@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class TwinoLogParserTest {
 
@@ -99,4 +100,13 @@ public class TwinoLogParserTest {
 		assertEquals("Parse void response result mismatch!", jsonLog, result);
 	}
 
+	@Test
+	public void testParseWithWarning() {
+		String log = "2016-03-24 15:26:12.682  WARN 6543 [http-nio-8080-exec-26]  --- o.s.security.crypto.bcrypt.BCryptPasswordEncoder : Encoded password does not look like BCrypt";
+		JSONObject result = parser.parse(log);
+		assertNotNull(result);
+	}
+	
+	
+	
 }
